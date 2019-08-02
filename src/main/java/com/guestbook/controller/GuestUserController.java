@@ -51,7 +51,7 @@ public class GuestUserController {
         model.addAttribute("guestBookInfo", guestBookInfo);
         logger.info("GuestUserController", () -> "guestBookInfo method");
  
-        return "userInfoPage";
+        return "guestEntriesPage";
     }
  
     @RequestMapping(value = "/403", method = RequestMethod.GET)

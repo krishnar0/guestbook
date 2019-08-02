@@ -84,7 +84,7 @@ public class GuestBookController {
         	model.addAttribute("guestBookEntries", guestBook.userGuestBookEntries(guestUser.getUserId()));
             model.addAttribute("roleInfo",guestRole);
         }	
-        return "userInfoPage";
+        return "guestEntriesPage";
     }
 	
 	@RequestMapping("/addEntry")  

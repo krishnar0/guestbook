@@ -110,7 +110,7 @@ public class GuestBookControllerTest {
                 .param("userName", "test")
                 )
 				.andExpect(status().isOk())
-				.andExpect(forwardedUrl("/WEB-INF/jsp/userInfoPage.jsp"))
+				.andExpect(forwardedUrl("/WEB-INF/jsp/guestEntriesPage.jsp"))
 		        .andExpect(model().attribute("guestBookEntries",guestBookList))
 		        .andExpect(model().attribute("roleInfo", guestRoles));
 		

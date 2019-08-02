@@ -84,7 +84,7 @@ public class GuestUserControllerTest {
 				.principal(testingAuthenticationToken)
                 )
 				.andExpect(status().isOk())
-				.andExpect(forwardedUrl("/WEB-INF/jsp/userInfoPage.jsp"));
+				.andExpect(forwardedUrl("/WEB-INF/jsp/guestEntriesPage.jsp"));
 	}
 
 	@Test
