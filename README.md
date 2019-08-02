@@ -55,9 +55,11 @@ values (2, 2);
 insert into user_role (USER_ID, ROLE_ID)
 values (3, 2);
 
+- open new browser tab and hit the url http://localhost:9090. login with below users.
+	-- Admin : admin/123
+	-- User	 : user1/123
 
-
-Alternatively you can use the jar file to run the application.
+Alternatively you can use the jar file to run the application and follow above to steps to run the application.
 
 java -jar guestbooktest-0.0.1-SNAPSHOT.jar
 ```
