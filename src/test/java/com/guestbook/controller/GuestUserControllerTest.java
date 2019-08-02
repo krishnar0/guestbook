@@ -2,6 +2,7 @@ package com.guestbook.controller;
 
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
@@ -89,11 +90,14 @@ public class GuestUserControllerTest {
 
 	@Test
 	public void testAccessDenied() throws Exception {
-		mockMvc.perform(post("/403")
+		String message = "Hi " + testingAuthenticationToken.getName() //
+        + "<br> You do not have permission to access this page!";
+		mockMvc.perform(get("/403")
 				.contentType(MediaType.APPLICATION_FORM_URLENCODED)
 				.principal(testingAuthenticationToken)
                 )
 				.andExpect(status().isOk())
-				.andExpect(forwardedUrl("/WEB-INF/jsp/403Page.jsp"));
+				.andExpect(forwardedUrl("/WEB-INF/jsp/403Page.jsp"))
+				.andExpect(model().attribute("message", message));
 	}
 }

@@ -130,11 +130,12 @@ public class GuestBookControllerTest {
 		guestRoles.add("ROLE_ADMIN");
 		when(guestBookDetailsService.addGuestBook(guestBookEntry1)).thenReturn(guestBookEntry1);
 		
-		
+				
 		mockMvc.perform(post("/saveOrUpdate")
 				.contentType(MediaType.APPLICATION_FORM_URLENCODED)
 				.principal(testingAuthenticationToken)
                 .param("inputType", "Text")
+                .param("submit", "submit")
                 .flashAttr("guestEntry", guestBookEntry1)
                 )
 				.andExpect(status().is(302))
@@ -197,7 +198,7 @@ public class GuestBookControllerTest {
 		List<String> guestRoles = new ArrayList<String>();
 		guestRoles.add("ROLE_ADMIN");
 		when(guestBookDetailsService.deleteGuestBook(guestBookEntry1.getGuestBookId())).thenReturn(guestBookEntry1.getGuestBookId());
-		
+
 		
 		mockMvc.perform(get("/reject/{id}",guestBookEntry1.getGuestBookId())
 				.contentType(MediaType.APPLICATION_FORM_URLENCODED)

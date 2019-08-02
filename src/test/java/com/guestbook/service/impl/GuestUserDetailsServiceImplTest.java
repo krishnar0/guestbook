@@ -58,13 +58,13 @@ public class GuestUserDetailsServiceImplTest {
 	@Test
 	public void testLoadUserByUsername() throws Exception {
 		        
-        user = new User("test101","", AuthorityUtils.createAuthorityList("ROLE_ADMIN"));
+        user = new User("test111","", AuthorityUtils.createAuthorityList("ROLE_ADMIN"));
         testingAuthenticationToken = new TestingAuthenticationToken(user,null);
         
         GuestUser guestUserData = new GuestUser(user.getUsername(), user.getPassword(), true);
         guestUserDao.save(guestUserData);
         
-        GuestRole guestRoleData = new GuestRole("ROLE_ADMIN");
+        GuestRole guestRoleData = new GuestRole("ROLE_ADMIN1");
         userRoleDao.save(guestRoleData);
         
         UserRole userRoleData = new UserRole(guestUserData, guestRoleData);
