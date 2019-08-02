@@ -46,13 +46,13 @@ values (2,'ROLE_USER');
  
 
  
-insert into user_role (USER_ID, ROLE_ID)
+insert into user_role (ID,USER_ID, ROLE_ID)
 values (1,1, 1);
  
-insert into user_role (USER_ID, ROLE_ID)
+insert into user_role (ID,USER_ID, ROLE_ID)
 values (2,2, 2);
 
-insert into user_role (USER_ID, ROLE_ID)
+insert into user_role (ID,USER_ID, ROLE_ID)
 values (3,3, 2);
 
 - open new browser tab and hit the url http://localhost:9090. login with below users.
