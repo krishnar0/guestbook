@@ -43,16 +43,23 @@
 					</tr>
 					<c:forEach var="guestBookEntries" items="${guestBookEntries}">
 					<tr>
-						<%-- <td>${guestBookEntries.guestBookDesc}</td> --%>
-						<td><img src="/uploadingDir/${guestBookEntries.guestBookDesc}" 
-			             class="img-responsive" width="150" height="110" /> </td>
+						<c:set var="imageInfo" value="${guestBookEntries.guestBookImage}"/>
 						<td>
+						<c:choose>
+						<c:when test="${imageInfo == null}">${guestBookEntries.guestBookDesc}</c:when>
+						<c:otherwise>
+						<img src="/uploadingDir/${guestBookEntries.guestBookDesc}" 
+			             class="img-responsive" width="150" height="110" /> </td>
+						
+						</c:otherwise>
+						</c:choose>
+						</td>
 						<c:set var="fieldStatus" value="${guestBookEntries.status}"/>
 						<c:set var="fieldStatusValue1" value="${0}"/>
 						<c:set var="fieldStatusValue2" value="${1}"/>
 						
 						<c:set var="userInfo" value="${guestBookEntries.guestUser}"/>
-						
+						<td>
 						<c:choose>
 						<c:when test="${fieldStatus == fieldStatusValue1}">Pending</c:when>
 						<c:when test="${fieldStatus == fieldStatusValue2}">Approved</c:when>

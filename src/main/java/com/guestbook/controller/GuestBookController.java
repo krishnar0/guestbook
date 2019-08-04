@@ -41,7 +41,7 @@ import com.guestbook.utils.WebUtils;
 @Controller
 public class GuestBookController {
 	
-	public static final String uploadingDir = System.getProperty("user.dir") + "\\src\\main\\resources\\upload\\";
+	public static final String uploadingDir = System.getProperty("user.dir") + "\\uploadingDir\\";
 	private static Logger  logger = LogManager.getLogger(GuestBookController.class);
 	
 	@Autowired
