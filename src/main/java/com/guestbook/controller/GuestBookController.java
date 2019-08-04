@@ -41,7 +41,7 @@ import com.guestbook.utils.WebUtils;
 @Controller
 public class GuestBookController {
 	
-	public static final String uploadingDir = System.getProperty("user.dir") + "/uploadingDir/";
+	public static final String uploadingDir = System.getProperty("user.dir") + "\\src\\main\\resources\\upload\\";
 	private static Logger  logger = LogManager.getLogger(GuestBookController.class);
 	
 	@Autowired
@@ -103,7 +103,7 @@ public class GuestBookController {
         
         if(submit.equalsIgnoreCase("submit")) {
         	guestEntry.setUserId(guestUser.getUserId());
-        	if(inputType.equalsIgnoreCase("Text")) {
+        	if(inputType.equalsIgnoreCase("Text")) { 
             	guestEntry.setGuestBookDesc(guestEntry.getGuestBookDesc());
             	
             }else {

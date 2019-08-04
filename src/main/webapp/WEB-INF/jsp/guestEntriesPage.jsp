@@ -43,7 +43,9 @@
 					</tr>
 					<c:forEach var="guestBookEntries" items="${guestBookEntries}">
 					<tr>
-						<td>${guestBookEntries.guestBookDesc}</td>
+						<%-- <td>${guestBookEntries.guestBookDesc}</td> --%>
+						<td><img src="/uploadingDir/${guestBookEntries.guestBookDesc}" 
+			             class="img-responsive" width="150" height="110" /> </td>
 						<td>
 						<c:set var="fieldStatus" value="${guestBookEntries.status}"/>
 						<c:set var="fieldStatusValue1" value="${0}"/>
